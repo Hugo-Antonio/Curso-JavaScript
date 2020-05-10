@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <h1>Sistemas de Pesquisa</h1>
+    País em que nasceu <input type="text" name="txtvel" id="txtvel">  
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res"></div>
+
+    <script>
+        function verificar(){
+        var txtv= window.document.getElementById("txtvel")
+        var res = window.document.querySelector("div#res")
+        var vel = String(txtv.value)
+        res.innerHTML = `<p> Ola, você nasceu no ${vel} . </p>`
+        if (vel == 'Brasil'){
+            res.innerHTML += `<p>Você é Brasileiro, pois nasceu no ${vel} .</p>`
+        }else {
+            res.innerHTML += `<p>Você é gringo, pois nasceu no ${vel} .</p>`
+        }
+
+    }
+        
+    </script>
+</body>
+</html>
