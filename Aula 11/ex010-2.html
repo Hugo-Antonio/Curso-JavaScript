@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota</title>
+    <style>
+        body{
+            background-color: rgb(100, 131, 165);
+            font: normal 20pt Arial;
+    
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Sistemas de notas</h1>
+    Digite a primeira nota <input type="number" name="txtnot1" id="txtnot1"> 
+    Digite  a segunda nota <input type="number" name="txtnot2" id="txtnot2"> 
+    <input type="button" value="Media" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+        var txtn1= window.document.getElementById("txtnot1")
+        var txtn2= window.document.getElementById("txtnot2")
+        var res = window.document.querySelector("div#res")
+        var nota1 = Number(txtn1.value)
+        var nota2 = Number(txtn2.value)
+        var med = (nota1 + nota2)/2
+        res.innerHTML = `<p> Ola aluno, sua nota foi ${med.toFixed(1)} . </p>`
+        if (med>=7){
+            res.innerHTML += `<p>Você foi aprovado, pois sua media foi ${med.toFixed(1)} ! </p>`
+        }else if (med<7 && med>=4){
+            res.innerHTML += `<p>Você esta em recuperação, pois sua media foi ${med.toFixed(1)} ! </p>`
+        }else {
+            res.innerHTML += `<p>Você esta em reprovado, pois sua media foi ${med.toFixed(1)} ! </p>`
+        }
+
+    }
+        
+    </script>
+</body>
+</html>
