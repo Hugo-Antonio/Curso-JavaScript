@@ -6,8 +6,8 @@
     <title>Detran</title>
 </head>
 <body>
-    <h1>Sistemas de Multas</h1>
-    Velocidade do carro<input type="number" name="txtvel" id="txtvel"> km/h 
+    <h1>Sistemas de dias da Semana</h1>
+    Digite em que dia da semana estamos <input type="number" name="txtvel" id="txtvel"> 
     <input type="button" value="Verificar" onclick="calcular()">
     <div id="res"></div>
 
@@ -15,11 +15,35 @@
         function calcular(){
         var txtv= window.document.getElementById("txtvel")
         var res = window.document.querySelector("div#res")
-        var vel = Number(txtv.value)
-        res.innerHTML = `<p> Ola, sua velocidade foi ${vel} km/h. </p>`
-        if (vel >60){
-            res.innerHTML += `<p>Você foi multado por excesso de Velocidade! </p>`
-        }
+        var dia = Number(txtv.value)
+        res.innerHTML = `<p> Ola estamos no ${dia}º da semana. </p>`
+       switch (dia){
+           case 1:
+                res.innerHTML += `<p> Logo, hoje é domingo. </p>`
+                break
+            case 2:
+                res.innerHTML += `<p> Logo, hoje é segunda. </p>`
+                break
+            case 3:
+                res.innerHTML += `<p> Logo, hoje é terça. </p>`
+                break
+            case 4:
+                res.innerHTML += `<p> Logo, hoje é quarta. </p>`
+                break
+            case 5:
+                res.innerHTML += `<p> Logo, hoje é quinta. </p>`
+                break
+            case 6:
+                res.innerHTML += `<p> Logo, hoje é sexta. </p>`
+                break
+                case 7:
+                res.innerHTML += `<p> Logo, hoje é sábado. </p>`
+                break
+            default:
+                res.innerHTML += `<p> (ERRO) Dia inválido. </p>`
+                break
+
+       }
 
     }
         
